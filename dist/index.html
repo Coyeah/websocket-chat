@@ -3,12 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>websocket chat</title>
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <h1>websocket chat</h1>
+    <header id="header">
+      <p class="header-title">websocket chat</p>
+      <p id="username"></p>
+    </header>
+    <div id="container">
+      <div id="record"></div>
+      <div id="send"></div>
+    </div>
+
+    <div id="login">
+      <div class="panel">
+        <div>请输入你的用户名：</div>
+        <input id="username-input" />
+        <button id="username-confirm">确认</button>
+      </div>
+    </div>
+
     <script src="/js/socket.io.js"></script>
-    <script>
-      var socket = io('http://127.0.0.1:3000/');
-    </script>
+    <script src="/js/script.js"></script>
   </body>
 </html>

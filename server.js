@@ -8,6 +8,15 @@ app.use('/', express.static(__dirname + '/dist'));
 
 io.on('connection', function (socket) {
   console.log('client connected!');
+
+  socket.on('user-login', function (username) {
+    console.log(`${username} is login`);
+    io.emit('login', username);
+  })
+
+  socket.on('disconnect', function () {
+    console.log('client disconnected');
+  });
 });
 
 server.listen(port, "127.0.0.1", () => {
