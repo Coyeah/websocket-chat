@@ -7,18 +7,24 @@
   </head>
   <body>
     <header id="header">
-      <p class="header-title">websocket chat</p>
-      <p id="username"></p>
+      <div class="header-title">websocket chat</div>
+      <div id="username"></div>
     </header>
     <div id="container">
-      <div id="record"></div>
-      <div id="send"></div>
+      <div class="record">
+        <div id="record-list">
+        </div>
+      </div>
+      <div class="send">
+        <textarea name="textarea" id="text-input"></textarea>
+        <button id="text-send">发送</button>
+      </div>
     </div>
 
     <div id="login">
       <div class="panel">
         <div>请输入你的用户名：</div>
-        <input id="username-input" />
+        <input id="username-input" style="outline:none;" />
         <button id="username-confirm">确认</button>
       </div>
     </div>

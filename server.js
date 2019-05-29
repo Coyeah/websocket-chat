@@ -11,8 +11,15 @@ io.on('connection', function (socket) {
 
   socket.on('user-login', function (username) {
     console.log(`${username} is login`);
-    io.emit('login', username);
-  })
+    io.emit('login', {
+      username,
+      status: 1,
+      msg: `${username}登入聊天室`
+    });
+  });
+  socket.on('user-send', function (data) {
+    io.emit('message', data);
+  });
 
   socket.on('disconnect', function () {
     console.log('client disconnected');
@@ -20,5 +27,5 @@ io.on('connection', function (socket) {
 });
 
 server.listen(port, "127.0.0.1", () => {
-  console.log(`Server is work at "localhost:${port}"`);
+  console.log(`Server is work at localhost:${port}`);
 })
