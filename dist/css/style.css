@@ -51,17 +51,18 @@ html, body {
   box-shadow: 15px 15px 10px #888;
 }
 
-.record {
+#record {
   height: 80%;
   padding: 8px;
+  overflow: auto;
 }
 
 #record-list {
-  overflow: auto;
-  height: 100%;
+  width: 100%;
 }
 
 .record-item {
+  width: 100%;
   margin: 4px 0;
 }
 
@@ -86,6 +87,8 @@ html, body {
 }
 
 .record-item-chat-content {
+  letter-spacing: 2px;
+  word-break: break-all;
 }
 
 .send {
@@ -106,6 +109,7 @@ html, body {
   font-size: 14px;
   box-shadow: 0 0 5px #aaa;
   display: inline-block;
+  letter-spacing: 2px;
 }
 
 .send>button {

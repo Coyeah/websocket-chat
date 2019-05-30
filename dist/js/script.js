@@ -33,7 +33,7 @@ function ChatRoom () {
   this.start = function (callback) {
     domSend.onclick = function () {
       var value = domInput.value;
-      callback && callback(value);
+      if (!!value) callback && callback(value);
     }
   }
   this.clear = function () {
@@ -46,10 +46,11 @@ function ChatRoom () {
 
 function Record () {
   this.list = [];
+  var domRecord = document.getElementById('record');
   var domRecordList = document.getElementById('record-list');
   this.push = function (target) {
     this.list.push(target);
-    
+
     var node = document.createElement('div');
     if (target.status === 1) {
       node.className = 'record-item record-item-notice';
@@ -66,6 +67,10 @@ function Record () {
       node.appendChild(content);
     }
     domRecordList.appendChild(node);
+
+    console.log(domRecordList.offsetHeight);
+    domRecord.scrollTop  = domRecordList.offsetHeight;
+
   }
 }
 
